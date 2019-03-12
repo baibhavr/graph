@@ -1,5 +1,5 @@
 from base.Graph import Graph
-from traversal.BFS import BFS
+from traversal.Traverse import Traverse
 import base
 from base import initGraph
 
@@ -10,9 +10,9 @@ def main():
     g.displayVertices()
     g.displayEdges()
     
-    bfs = BFS(g)
-    bfs.start(1)
-    
+    t = Traverse(g)
+    print("DFS traversal :",t.startDFS(1))
+    print("BFS traversal :",t.startBFS(1))
   
 if __name__== "__main__":
     main()
