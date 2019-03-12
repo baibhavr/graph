@@ -42,17 +42,14 @@ class Graph:
                 print((src.getId(), dest.getId(), src.getWeight(dest)))
         print("]")
 
+    def __str__(self):
+        out = "V ="+str(list(self.V.keys()))
+        out += "\nE = [\n"
+        for src in self:
+            for dest in src.getOutNeighbors():
+                out += str(src.getId())+','+str(dest.getId())+','+str(src.getWeight(dest))+'\n'
+        out += "]"
+        return out
+        
     def __iter__(self):
         return iter(self.V.values())
-    
-g = Graph()
-for i in range(10):
-    g.addVertex(i)
-    
-g.addEdge(1,2,2)
-g.addEdge(2,3,4)
-g.addEdge(3,1,5)
-g.addEdge(4,5,2)
-
-g.displayVertices()
-g.displayEdges()
