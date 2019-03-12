@@ -5,13 +5,13 @@ from base import initGraph
 
 def main():
     gObj = initGraph()
-    gObj.dummyGraph()
+    gObj.dummyGraph1()
     g = gObj.g
     g.displayVertices()
     g.displayEdges()
     
     bfs = BFS(g)
-    bfs.start(8)
+    bfs.start(1)
     
   
 if __name__== "__main__":

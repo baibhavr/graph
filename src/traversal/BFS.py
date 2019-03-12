@@ -1,6 +1,4 @@
 import queue as q
-from base.Graph import Graph
-from base.Vertex import Vertex
 
 '''
 BFS on a graph
@@ -22,10 +20,11 @@ class BFS:
         '''ITERATE OVER THE QUEUE ITEMS'''
         while (self.queue.empty() is not True):
             current = self.queue.get()
-            self.visited.append(current.getId())
-            for neighbor in current.getOutNeighbors():
-                if(neighbor.getId() not in self.visited):
-                    self.queue.put(neighbor)
+            if(current.getId() not in self.visited):
+                self.visited.append(current.getId())
+                for neighbor in current.getOutNeighbors():
+                    if(neighbor.getId() not in self.visited):
+                        self.queue.put(neighbor)
     
 #         print(self)
         print("Traversal Sequence :",self.visited)
