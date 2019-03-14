@@ -30,7 +30,7 @@ class Graph:
         self.V[src].addNeighbor(self.V[dest], weight)
 
     def getVertices(self):
-        return self.V.keys()
+        return self.V
     
     def displayVertices(self):
         print("V =",list(self.V.keys()))
