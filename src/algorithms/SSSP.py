@@ -26,10 +26,10 @@ class SSSP:
 		while Q.empty() is not True:	# main loop
 			uId = Q.get()[1]
 			u = self.graph.getVertex(uId)
-			for neighbor in u.outEdgeNeighbors:	# where v has not yet been removed from Q.
+			for neighbor in u.outEdgeNeighbors:
 				neighborId = neighbor.getId()
 				alt = self.dist[uId] + u.getWeight(neighbor)
-				if (alt < self.dist[neighborId]):	# Relax (uId,v)
+				if (alt < self.dist[neighborId]):
 					self.dist[neighborId] = alt
 					previous[neighborId] = uId
 
